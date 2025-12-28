@@ -31,11 +31,11 @@ struct PinSetView: View {
                     VStack(alignment: .center, spacing: 10) {
                         Text("Enter \(Self.totalDigits)-Digit Code")
                             .font(.system(size: 30, weight: .bold))
-                            .foregroundColor(.white)
+                            .foregroundColor(.black)
                         
                         Text("Please enter your PIN to continue")
                             .font(.system(size: 15, weight: .semibold))
-                            .foregroundColor(.white.opacity(0.8))
+                            .foregroundColor(.gray)
                     }
                     
                     // PIN input fields - Centered and equally distributed

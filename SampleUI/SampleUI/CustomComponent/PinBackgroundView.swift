@@ -10,8 +10,8 @@ import SwiftUI
 struct PinBackgroundView: View {
     var body: some View {
         ZStack {
-            // Base gradient background
-            Color.appGradient
+            // White background
+            Color.white
                 .ignoresSafeArea()
             
             // Decorative circles for depth
@@ -21,8 +21,8 @@ struct PinBackgroundView: View {
                     .fill(
                         LinearGradient(
                             colors: [
-                                Color.white.opacity(0.1),
-                                Color.white.opacity(0.05)
+                                Color.gray.opacity(0.1),
+                                Color.gray.opacity(0.05)
                             ],
                             startPoint: .topLeading,
                             endPoint: .bottomTrailing
@@ -37,8 +37,8 @@ struct PinBackgroundView: View {
                     .fill(
                         LinearGradient(
                             colors: [
-                                Color.white.opacity(0.08),
-                                Color.white.opacity(0.03)
+                                Color.gray.opacity(0.08),
+                                Color.gray.opacity(0.03)
                             ],
                             startPoint: .topLeading,
                             endPoint: .bottomTrailing
@@ -50,7 +50,7 @@ struct PinBackgroundView: View {
                 
                 // Small accent circle
                 Circle()
-                    .fill(Color.white.opacity(0.1))
+                    .fill(Color.gray.opacity(0.1))
                     .frame(width: geometry.size.width * 0.3, height: geometry.size.width * 0.3)
                     .offset(x: geometry.size.width * 0.7, y: geometry.size.height * 0.3)
                     .blur(radius: 20)
