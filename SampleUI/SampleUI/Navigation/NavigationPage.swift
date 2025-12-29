@@ -28,18 +28,18 @@ enum PageName: Hashable, Identifiable {
 //extension NavigationPage: CaseIterable {
 //    var viewController: UIViewController {
 //        switch self {
-//            
+//
 //        case .signIn:
-//            
+//
 //        case .signUp:
-//            
+//
 //        case .pinScreen:
-//            
-//            
+//
+//
 //        case .forgotPassword:
-//            
+//
 //        case .home:
-//            
+//
 //        }
 //    }
 //}

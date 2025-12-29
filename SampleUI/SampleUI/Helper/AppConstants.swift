@@ -12,7 +12,7 @@ enum AppConstants {
     static let pinDigitFieldWidth: CGFloat = 70
     static let pinDigitFieldHeight: CGFloat = 70
     static let pinDigitFieldCornerRadius: CGFloat = 16
-    static let defaultTextFieldType: PinTextFieldType = .withCornerRadius
+    static let defaultTextFieldType: PinTextFieldType = .roundCorner
 }
 
 // MARK: - PIN Text Field Type Enum

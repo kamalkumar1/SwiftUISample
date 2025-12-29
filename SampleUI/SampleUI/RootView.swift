@@ -28,16 +28,6 @@ struct RootView: View {
                         EmptyView()
                     }
                 }
-                .sheet(item: $navManager.presentedPage) { page in
-                    switch page
-                    {
-                    case .SignUp:
-                        SignUpView()
-                    case .ForgotPassword:
-                        ForgotPassword()
-                    default: EmptyView()
-                    }
-                }
                 .sheet(item: $navManager.presentedPage, onDismiss: {
                     // Optional cleanup logic here
                     print("Sheet dismissed")

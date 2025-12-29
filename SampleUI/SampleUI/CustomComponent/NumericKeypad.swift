@@ -102,17 +102,29 @@ struct KeypadButton: View {
         switch buttonType {
         case .rectangle:
             Rectangle()
-                .fill(Color.white.opacity(0.2))
+                .fill(Color.gray.opacity(0.1))
+                .overlay(
+                    Rectangle()
+                        .stroke(Color.gray.opacity(0.3), lineWidth: 1)
+                )
                 .frame(width: 70, height: 70)
         case .roundCorner:
             // Fully round (Circle)
             Circle()
-                .fill(Color.white.opacity(0.2))
+                .fill(Color.gray.opacity(0.1))
+                .overlay(
+                    Circle()
+                        .stroke(Color.gray.opacity(0.3), lineWidth: 1)
+                )
                 .frame(width: 70, height: 70)
         case .withCornerRadius:
             // Rounded rectangle with corner radius
             RoundedRectangle(cornerRadius: buttonType.cornerRadius)
-                .fill(Color.white.opacity(0.2))
+                .fill(Color.gray.opacity(0.1))
+                .overlay(
+                    RoundedRectangle(cornerRadius: buttonType.cornerRadius)
+                        .stroke(Color.gray.opacity(0.3), lineWidth: 1)
+                )
                 .frame(width: 70, height: 70)
         }
     }
@@ -128,7 +140,7 @@ struct KeypadButton: View {
                         .font(.system(size: fontSize, weight: fontWeight))
                 }
             }
-            .foregroundColor(.white)
+            .foregroundColor(.black)
             .frame(width: 70, height: 70)
             .background(backgroundShape)
             .scaleEffect(isPressed ? 0.85 : 1.0)
@@ -140,7 +152,7 @@ struct KeypadButton: View {
 
 #Preview {
     ZStack {
-        Color.appGradient
+        Color.white
         NumericKeypad(
             onNumberTap: { number in
                 print("Tapped: \(number)")

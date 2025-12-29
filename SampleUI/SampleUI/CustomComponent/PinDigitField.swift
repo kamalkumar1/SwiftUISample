@@ -36,17 +36,29 @@ struct PinDigitField: View {
         switch fieldType {
         case .rectangle:
             Rectangle()
-                .fill(Color.white.opacity(0.2))
+                .fill(Color.gray.opacity(0.1))
+                .overlay(
+                    Rectangle()
+                        .stroke(Color.gray.opacity(0.3), lineWidth: 1)
+                )
                 .frame(width: size, height: size)
         case .roundCorner:
             // Fully round (Circle)
             Circle()
-                .fill(Color.white.opacity(0.2))
+                .fill(Color.gray.opacity(0.1))
+                .overlay(
+                    Circle()
+                        .stroke(Color.gray.opacity(0.3), lineWidth: 1)
+                )
                 .frame(width: size, height: size)
         case .withCornerRadius:
             // Rounded rectangle with corner radius
             RoundedRectangle(cornerRadius: fieldType.cornerRadius)
-                .fill(Color.white.opacity(0.2))
+                .fill(Color.gray.opacity(0.1))
+                .overlay(
+                    RoundedRectangle(cornerRadius: fieldType.cornerRadius)
+                        .stroke(Color.gray.opacity(0.3), lineWidth: 1)
+                )
                 .frame(width: size, height: size)
         }
     }
@@ -60,7 +72,7 @@ struct PinDigitField: View {
             // Show secure character if enabled, otherwise show actual text
             Text(showSecure && !displayText.isEmpty ? secureCharacter : displayText)
                 .font(.system(size: fontSize, weight: .medium))
-                .foregroundColor(.white)
+                .foregroundColor(.black)
                 .multilineTextAlignment(.center)
                 .frame(width: size, height: size)
                 .opacity(opacity)
