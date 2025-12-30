@@ -49,6 +49,13 @@ struct PinSetView: View {
                         }
                     }
                     .frame(maxWidth: .infinity)
+                    ForgotPasswordButton(title: "For got pin?") {
+                        
+                        NavigationManager.Shared.present(PageName.ForgotPassword)
+                        
+                    }.padding(.trailing,24)
+                        
+                    
                     
                     // Custom Numeric Keypad
                     NumericKeypad(

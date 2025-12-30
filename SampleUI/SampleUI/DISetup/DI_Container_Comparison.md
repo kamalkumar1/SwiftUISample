@@ -11,7 +11,7 @@
 
 | Aspect | DIContainer (Custom) | SwinjectDIContainer |
 |--------|---------------------|---------------------|
-| **Resolution Speed** | ✅ Faster (direct dictionary lookup) | ⚠️ Slightly slower (library overhead) |
+| **Resolution Speed** | ✅ Faster (direct dictionary lookup) | ⚠️ Slightly slower (library overhead) 
 | **Memory Overhead** | ✅ Lower (minimal) | ⚠️ Slightly higher (library features) |
 | **Startup Time** | ✅ Faster | ⚠️ Slightly slower |
 | **Runtime Performance** | ✅ Excellent | ✅ Excellent (optimized library) |

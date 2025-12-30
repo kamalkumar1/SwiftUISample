@@ -8,35 +8,30 @@
 import Foundation
 import Swinject
 
-/// Example Assembly class demonstrating how to organize dependency registrations
+/// Main Assembly class for organizing dependency registrations
 /// This follows Swinject's recommended Assembly pattern
 class AppAssembly: Assembly {
     func assemble(container: Container) {
-        // MARK: - ViewModels
+        // MARK: - Network Layer
+        // Register network layer dependencies
+        let networkAssembly = NetworkLayerAssembly()
+        networkAssembly.assemble(container: container)
+        
+        // MARK: - Managers (Singleton - persist across logout)
+        container.register(NavigationManager.self) { _ in
+            NavigationManager.Shared
+        }.inObjectScope(.container)
+        
+        // MARK: - ViewModels (Transient - new instance per view)
         // Example: Register ViewModels
         // container.register(LoginViewModel.self) { resolver in
+        //     let authService = resolver.resolve(AuthServiceProtocol.self)!
         //     let navigationManager = resolver.resolve(NavigationManager.self)!
-        //     return LoginViewModel(navigationManager: navigationManager)
+        //     return LoginViewModel(authService: authService, navigationManager: navigationManager)
         // }.inObjectScope(.transient)
         
-        // MARK: - Services
-        // Example: Register Services
-        // container.register(AuthServiceProtocol.self) { _ in
-        //     AuthService()
-        // }.inObjectScope(.container) // Singleton
-        
-        // MARK: - Managers
-        // Example: Register Managers
-        // container.register(NavigationManager.self) { _ in
-        //     NavigationManager.Shared
-        // }.inObjectScope(.container) // Singleton
-        
-        // MARK: - Repositories
-        // Example: Register Repositories
-        // container.register(UserRepositoryProtocol.self) { resolver in
-        //     let apiService = resolver.resolve(APIServiceProtocol.self)!
-        //     return UserRepository(apiService: apiService)
-        // }.inObjectScope(.transient)
+        // MARK: - Additional Services
+        // Add other app-level services here
     }
 }
 
